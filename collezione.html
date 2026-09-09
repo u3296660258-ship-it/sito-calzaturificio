@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collezione — Massimo Baldi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="wordmark">Massimo <em>Baldi</em></a>
+    <div class="navlinks" id="navlinks">
+      <a href="collezione.html" class="current" data-i18n="nav_collezione">Collezione</a>
+      <a href="storia.html" data-i18n="nav_storia">La storia</a>
+      <a href="lavorazione.html" data-i18n="nav_lavorazione">Lavorazione</a>
+      <a href="contatti.html" data-i18n="nav_contatti">Contatti</a>
+      <button class="langbtn" id="langBtn">EN</button>
+    </div>
+    <button class="navtoggle" id="navtoggle" aria-label="Apri menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#241A14" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow on-dark" data-i18n="ph_coll_eyebrow">La collezione</span>
+    <h1 data-i18n="ph_coll_h1">Ogni modello, un paio di mani.</h1>
+    <p data-i18n="ph_coll_lead">Filtra per categoria e stagione per scoprire i modelli disponibili.</p>
+  </div>
+</section>
+
+<section class="reveal" style="padding-top:56px;">
+  <div class="container">
+    <div class="filters">
+      <div class="filter-group">
+        <span class="filter-label" data-i18n="filter_season">Stagione</span>
+        <button class="chip active" data-filter="season" data-value="all" data-i18n="tab_all">Tutti</button>
+        <button class="chip" data-filter="season" data-value="ss" data-i18n="tab_ss">Primavera / Estate</button>
+        <button class="chip" data-filter="season" data-value="aw" data-i18n="tab_aw">Autunno / Inverno</button>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label" data-i18n="filter_category">Categoria</span>
+        <button class="chip active" data-filter="category" data-value="all" data-i18n="tab_all">Tutti</button>
+        <button class="chip" data-filter="category" data-value="Décolleté" data-i18n="cat_decollete">Décolleté</button>
+        <button class="chip" data-filter="category" data-value="Ballerine" data-i18n="cat_ballerine">Ballerine</button>
+        <button class="chip" data-filter="category" data-value="Sandalo" data-i18n="cat_sandalo">Sandalo</button>
+        <button class="chip" data-filter="category" data-value="Tronchetto" data-i18n="cat_tronchetto">Tronchetto</button>
+        <button class="chip" data-filter="category" data-value="Stivale" data-i18n="cat_stivale">Stivale</button>
+        <button class="chip" data-filter="category" data-value="Stivaletto" data-i18n="cat_stivaletto">Stivaletto</button>
+        <button class="chip" data-filter="category" data-value="Mocassino" data-i18n="cat_mocassino">Mocassino</button>
+      </div>
+    </div>
+    <div class="grid-collezione" id="collGrid"></div>
+    <p class="count-note" id="countNote"></p>
+  </div>
+</section>
+
+<footer id="contatti">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="wordmark">Massimo <em>Baldi</em></span>
+        <p data-i18n="footer_about">Calzaturificio Baldi — pelletteria e calzature artigianali da donna, realizzate a Levane, Bucine (AR) dal 1950.</p>
+        <div class="addr-footer">Levane — 52021 Bucine (AR)<br>Toscana, Italia</div>
+        <form class="news" id="newsForm">
+          <input type="email" data-i18n-ph="news_ph" placeholder="La tua email" required aria-label="Email">
+          <button type="submit" data-i18n="news_btn">Iscriviti</button>
+        </form>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_nav">Naviga</h4>
+        <a href="collezione.html" data-i18n="nav_collezione">Collezione</a>
+        <a href="storia.html" data-i18n="nav_storia">La storia</a>
+        <a href="lavorazione.html" data-i18n="nav_lavorazione">Lavorazione</a>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_contatti">Contatti</h4>
+        <a href="mailto:produzione@baldicalzature.it">produzione@baldicalzature.it</a>
+        <a href="tel:+390559788096">0559788096</a>
+        <a href="contatti.html" data-i18n="nav_contatti">Contatti</a>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <span data-i18n="footer_copy">© 2026 Calzaturificio Baldi. Tutti i diritti riservati.</span>
+      <span data-i18n="footer_tag">Fatto a mano in Toscana</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  let currentSeason = 'all';
+  let currentCategory = 'all';
+  let products = [];
+
+  const fallbackProducts = [
+    { category_it:'Décolleté', category_en:'Pumps', season:'ss', tag_it:'Décolleté in pelle panna, tacco basso.', tag_en:'Cream leather pump, low heel.', image:'' },
+    { category_it:'Mocassino', category_en:'Loafer', season:'aw', tag_it:'Mocassino stile barca in pelle scamosciata.', tag_en:'Boat-style suede loafer.', image:'' },
+    { category_it:'Stivaletto', category_en:'Ankle boot', season:'aw', tag_it:'Stivaletto chiuso in pelle nera, suola in cuoio.', tag_en:'Closed black leather bootie, leather sole.', image:'' },
+    { category_it:'Sandalo', category_en:'Sandal', season:'ss', tag_it:'Sandalo in pelle panna, cinturino alla caviglia.', tag_en:'Cream leather sandal, ankle strap.', image:'' }
+  ];
+
+  fetch('data/products.json')
+    .then(r => r.json())
+    .then(data => { products = data.products || fallbackProducts; renderCollection(); })
+    .catch(() => { products = fallbackProducts; renderCollection(); });
+
+  function renderCollection(){
+    const grid = document.getElementById('collGrid');
+    const note = document.getElementById('countNote');
+    if(!grid) return;
+    grid.innerHTML = '';
+    const filtered = products.filter(p =>
+      (currentSeason === 'all' || p.season === currentSeason) &&
+      (currentCategory === 'all' || p.category_it === currentCategory)
+    );
+    if(filtered.length === 0){
+      const msg = document.createElement('p');
+      msg.className = 'empty-msg';
+      msg.textContent = translations.empty_msg[currentLang];
+      grid.appendChild(msg);
+      if(note) note.textContent = '';
+      return;
+    }
+    filtered.forEach((p) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const artHtml = p.image
+        ? `<img src="${p.image}" alt="${currentLang === 'it' ? p.category_it : p.category_en}" loading="lazy">`
+        : '';
+      card.innerHTML = `
+        <div class="card-art">${artHtml}</div>
+        <div class="card-body">
+          <span class="eyebrow">${currentLang === 'it' ? p.category_it : p.category_en}</span>
+          <p>${currentLang === 'it' ? p.tag_it : p.tag_en}</p>
+        </div>`;
+      grid.appendChild(card);
+    });
+    if(note){
+      const countText = currentLang === 'it'
+        ? `${filtered.length} modelli mostrati`
+        : `${filtered.length} styles shown`;
+      note.textContent = countText;
+    }
+  }
+
+  const categoriesBySeason = {
+    ss: ["Décolleté", "Ballerine", "Sandalo"],
+    aw: ["Tronchetto", "Stivale", "Stivaletto", "Mocassino", "Décolleté"]
+  };
+
+  function updateCategoryVisibility(){
+    const catChips = document.querySelectorAll('.chip[data-filter="category"]');
+    catChips.forEach(chip => {
+      const val = chip.getAttribute('data-value');
+      if(val === 'all' || currentSeason === 'all' || categoriesBySeason[currentSeason].includes(val)){
+        chip.style.display = '';
+      } else {
+        chip.style.display = 'none';
+        if(chip.classList.contains('active')){
+          chip.classList.remove('active');
+          document.querySelector('.chip[data-filter="category"][data-value="all"]').classList.add('active');
+          currentCategory = 'all';
+        }
+      }
+    });
+  }
+
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const group = chip.getAttribute('data-filter');
+      document.querySelectorAll(`.chip[data-filter="${group}"]`).forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      if(group === 'season') currentSeason = chip.getAttribute('data-value');
+      if(group === 'category') currentCategory = chip.getAttribute('data-value');
+      updateCategoryVisibility();
+      renderCollection();
+    });
+  });
+  updateCategoryVisibility();
+</script>
+</body>
+</html>

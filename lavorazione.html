@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La lavorazione — Massimo Baldi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="wordmark">Massimo <em>Baldi</em></a>
+    <div class="navlinks" id="navlinks">
+      <a href="collezione.html" data-i18n="nav_collezione">Collezione</a>
+      <a href="storia.html" data-i18n="nav_storia">La storia</a>
+      <a href="lavorazione.html" class="current" data-i18n="nav_lavorazione">Lavorazione</a>
+      <a href="contatti.html" data-i18n="nav_contatti">Contatti</a>
+      <button class="langbtn" id="langBtn">EN</button>
+    </div>
+    <button class="navtoggle" id="navtoggle" aria-label="Apri menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#241A14" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow on-dark" data-i18n="ph_proc_eyebrow">La lavorazione</span>
+    <h1 data-i18n="ph_proc_h1">Quattro fasi, nessuna scorciatoia.</h1>
+    <p data-i18n="ph_proc_lead">Il nostro processo non è cambiato da oltre settant'anni: quattro fasi distinte, ognuna affidata a un artigiano specializzato.</p>
+  </div>
+</section>
+
+<svg class="stitch" viewBox="0 0 1180 14" preserveAspectRatio="none"><path d="M0 7 L1180 7"/></svg>
+
+<section class="processo reveal">
+  <div class="container">
+    <div class="steps">
+      <div class="step"><span class="num" data-i18n="proc_num1">Fase 01</span><h3 data-i18n="proc_t1">Taglio</h3><p data-i18n="proc_d1">Ogni pelle viene esaminata e tagliata a mano per sfruttarne le venature naturali.</p></div>
+      <div class="step"><span class="num" data-i18n="proc_num2">Fase 02</span><h3 data-i18n="proc_t2">Orlatura</h3><p data-i18n="proc_d2">Le tomaie vengono cucite a punto sellaio, filo di lino incerato, ago per ago.</p></div>
+      <div class="step"><span class="num" data-i18n="proc_num3">Fase 03</span><h3 data-i18n="proc_t3">Montaggio</h3><p data-i18n="proc_d3">La tomaia viene montata sulla forma in legno, calzata e lasciata riposare 48 ore.</p></div>
+      <div class="step"><span class="num" data-i18n="proc_num4">Fase 04</span><h3 data-i18n="proc_t4">Rifinitura</h3><p data-i18n="proc_d4">Suola cucita, tacco applicato, e infine la lucidatura a cera d'api fatta a mano.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contatti">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="wordmark">Massimo <em>Baldi</em></span>
+        <p data-i18n="footer_about">Calzaturificio Baldi — pelletteria e calzature artigianali da donna, realizzate a Levane, Bucine (AR) dal 1950.</p>
+        <div class="addr-footer">Levane — 52021 Bucine (AR)<br>Toscana, Italia</div>
+        <form class="news" id="newsForm">
+          <input type="email" data-i18n-ph="news_ph" placeholder="La tua email" required aria-label="Email">
+          <button type="submit" data-i18n="news_btn">Iscriviti</button>
+        </form>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_nav">Naviga</h4>
+        <a href="collezione.html" data-i18n="nav_collezione">Collezione</a>
+        <a href="storia.html" data-i18n="nav_storia">La storia</a>
+        <a href="lavorazione.html" data-i18n="nav_lavorazione">Lavorazione</a>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_contatti">Contatti</h4>
+        <a href="mailto:produzione@baldicalzature.it">produzione@baldicalzature.it</a>
+        <a href="tel:+390559788096">0559788096</a>
+        <a href="contatti.html" data-i18n="nav_contatti">Contatti</a>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <span data-i18n="footer_copy">© 2026 Calzaturificio Baldi. Tutti i diritti riservati.</span>
+      <span data-i18n="footer_tag">Fatto a mano in Toscana</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

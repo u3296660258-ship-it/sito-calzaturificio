@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massimo Baldi — Calzaturificio Baldi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="wordmark">Massimo <em>Baldi</em></a>
+    <div class="navlinks" id="navlinks">
+      <a href="collezione.html" data-i18n="nav_collezione">Collezione</a>
+      <a href="storia.html" data-i18n="nav_storia">La storia</a>
+      <a href="lavorazione.html" data-i18n="nav_lavorazione">Lavorazione</a>
+      <a href="contatti.html" data-i18n="nav_contatti">Contatti</a>
+      <button class="langbtn" id="langBtn">EN</button>
+    </div>
+    <button class="navtoggle" id="navtoggle" aria-label="Apri menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#241A14" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow on-dark" data-i18n="hero_eyebrow">Calzaturificio Baldi · dal 1950 · Levane, Bucine (AR)</span>
+      <h1><span data-i18n="hero_h1a">Fatta a mano.</span><br><span class="accent" data-i18n="hero_h1b">Da tre generazioni.</span></h1>
+      <p class="lead" data-i18n="hero_lead">Dal 1950 realizziamo calzature da donna in Toscana, a mano, un paio alla volta.</p>
+      <div class="cta-row">
+        <a href="collezione.html" class="btn btn-primary" data-i18n="cta_collezione">Scopri la collezione</a>
+        <a href="storia.html" class="btn btn-ghost" data-i18n="cta_storia">La nostra storia</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/uploads/modella-landing.jpg" alt="Massimo Baldi — stile" id="heroImg">
+    </div>
+  </div>
+</section>
+
+<script>
+  fetch('data/home.json')
+    .then(r => r.json())
+    .then(data => {
+      const img = document.getElementById('heroImg');
+      if (img && data.heroImage) {
+        img.src = data.heroImage;
+        img.alt = data.heroAlt || img.alt;
+      }
+    })
+    .catch(() => {});
+</script>
+
+<footer id="contatti">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="wordmark">Massimo <em>Baldi</em></span>
+        <p data-i18n="footer_about">Calzaturificio Baldi — pelletteria e calzature artigianali da donna, realizzate a Levane, Bucine (AR) dal 1950.</p>
+        <div class="addr-footer">Levane — 52021 Bucine (AR)<br>Toscana, Italia</div>
+        <form class="news" id="newsForm">
+          <input type="email" data-i18n-ph="news_ph" placeholder="La tua email" required aria-label="Email">
+          <button type="submit" data-i18n="news_btn">Iscriviti</button>
+        </form>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_nav">Naviga</h4>
+        <a href="collezione.html" data-i18n="nav_collezione">Collezione</a>
+        <a href="storia.html" data-i18n="nav_storia">La storia</a>
+        <a href="lavorazione.html" data-i18n="nav_lavorazione">Lavorazione</a>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_contatti">Contatti</h4>
+        <a href="mailto:produzione@baldicalzature.it">produzione@baldicalzature.it</a>
+        <a href="tel:+390559788096">0559788096</a>
+        <a href="contatti.html" data-i18n="nav_contatti">Contatti</a>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <span data-i18n="footer_copy">© 2026 Calzaturificio Baldi. Tutti i diritti riservati.</span>
+      <span data-i18n="footer_tag">Fatto a mano in Toscana</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+</script>
+</body>
+</html>

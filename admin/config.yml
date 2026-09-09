@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "it"
+
+collections:
+  - name: "home"
+    label: "Home"
+    files:
+      - name: "home"
+        label: "Foto in evidenza (landing page)"
+        file: "data/home.json"
+        fields:
+          - label: "Foto grande in home"
+            name: "heroImage"
+            widget: "image"
+          - label: "Testo alternativo (descrizione foto)"
+            name: "heroAlt"
+            widget: "string"
+            default: "Massimo Baldi — stile"
+      - name: "storia"
+        label: "Foto pagina Storia"
+        file: "data/storia.json"
+        fields:
+          - label: "Foto riquadro Storia"
+            name: "swatchImage"
+            widget: "image"
+
+  - name: "products"
+    label: "Collezione — Prodotti"
+    label_singular: "Modello"
+    files:
+      - name: "products"
+        label: "Tutti i modelli"
+        file: "data/products.json"
+        fields:
+          - label: "Modelli"
+            name: "products"
+            widget: "list"
+            summary: "{{category_it}} — {{season}}"
+            fields:
+              - label: "Categoria (Italiano)"
+                name: "category_it"
+                widget: "select"
+                options: ["Décolleté", "Ballerine", "Sandalo", "Tronchetto", "Stivale", "Stivaletto", "Mocassino"]
+              - label: "Categoria (Inglese)"
+                name: "category_en"
+                widget: "select"
+                options: ["Pumps", "Ballet flats", "Sandal", "Chelsea boot", "Boot", "Ankle boot", "Loafer"]
+              - label: "Stagione"
+                name: "season"
+                widget: "select"
+                options:
+                  - { label: "Primavera / Estate", value: "ss" }
+                  - { label: "Autunno / Inverno", value: "aw" }
+              - { label: "Descrizione (Italiano)", name: "tag_it", widget: "text", required: false }
+              - { label: "Descrizione (Inglese)", name: "tag_en", widget: "text", required: false }
+              - { label: "Foto prodotto", name: "image", widget: "image" }

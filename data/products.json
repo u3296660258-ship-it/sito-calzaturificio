@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "category_it": "Décolleté",
+      "category_en": "Pumps",
+      "season": "ss",
+      "tag_it": "Décolleté in pelle panna, arricciatura sul collo del piede, tacco basso.",
+      "tag_en": "Cream leather pump, ruched vamp detail, low heel.",
+      "image": "images/uploads/decollete-832-52.jpg"
+    },
+    {
+      "category_it": "Mocassino",
+      "category_en": "Loafer",
+      "season": "aw",
+      "tag_it": "Mocassino stile barca in pelle scamosciata, lacci a contrasto.",
+      "tag_en": "Boat-style loafer in suede, contrast laces.",
+      "image": "images/uploads/mocassino-3482-1.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo in pelle panna, cinturino sottile alla caviglia, tacco a spillo.",
+      "tag_en": "Cream leather sandal, thin ankle strap, stiletto heel.",
+      "image": "images/uploads/sandalo-412-4.jpg"
+    },
+    {
+      "category_it": "Stivaletto",
+      "category_en": "Ankle boot",
+      "season": "aw",
+      "tag_it": "Stivaletto chiuso in pelle nera, linea essenziale, suola in cuoio.",
+      "tag_en": "Closed black leather ankle bootie, essential line, leather sole.",
+      "image": "images/uploads/stivaletto-4822-1.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo flat in pelle panna, fascia annodata sul collo del piede.",
+      "tag_en": "Flat cream leather sandal, knotted vamp strap.",
+      "image": "images/uploads/sandalo-591-19.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo in pelle panna, doppio cinturino incrociato alla caviglia.",
+      "tag_en": "Cream leather sandal, double crossed ankle strap.",
+      "image": "images/uploads/sandalo-591-2.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo in pelle panna, cinturino alla caviglia con fibbia.",
+      "tag_en": "Cream leather sandal, buckled ankle strap.",
+      "image": "images/uploads/sandalo-591-26.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo infradito in pelle panna, fascette sottili.",
+      "tag_en": "Cream leather thong sandal, slim straps.",
+      "image": "images/uploads/sandalo-591-3.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo in pelle nera, cinturino alla caviglia, punta squadrata.",
+      "tag_en": "Black leather sandal, ankle strap, square toe.",
+      "image": "images/uploads/sandalo-591-4.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo in pelle panna, fascette multiple intrecciate.",
+      "tag_en": "Cream leather sandal, multiple woven straps.",
+      "image": "images/uploads/sandalo-591-6.jpg"
+    },
+    {
+      "category_it": "Sandalo",
+      "category_en": "Sandal",
+      "season": "ss",
+      "tag_it": "Sandalo in pelle cuoio, fascia annodata sul collo del piede.",
+      "tag_en": "Tan leather sandal, knotted vamp strap.",
+      "image": "images/uploads/sandalo-591-12.jpg"
+    }
+  ]
+}
